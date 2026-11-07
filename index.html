@@ -1,667 +1,657 @@
-```html
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff0f5">
+  <meta name="description" content="Nasywa Natania Paramitha — Sociology Graduate interested in Business Operations, Digital Marketing, and Data Analysis.">
+  <meta name="author" content="Nasywa Natania Paramitha">
 
   <title>Nasywa Natania Paramitha | Personal Portfolio</title>
 
-  <meta name="description" content="Personal portfolio of Nasywa Natania Paramitha, Sociology Graduate interested in Business Operations, Data Analysis, Digital Marketing, and Social Development.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
-
     :root {
-      --bg: #fff7f8;
-      --card: #ffffff;
-      --pink: #e98eae;
-      --dark-pink: #bd587f;
-      --soft: #ffe8ef;
-      --text: #44333a;
-      --muted: #947d86;
-      --border: #f5dce5;
+      --primary: #d96b91;
+      --primary-dark: #bd5279;
+      --pink-light: #fff0f5;
+      --pink-soft: #fce1eb;
+      --background: #fffafb;
+      --surface: #ffffff;
+      --text: #493640;
+      --muted: #927b87;
+      --border: #f2dce5;
+      --shadow: 0 12px 35px rgba(190, 104, 139, 0.10);
     }
 
-    [data-theme="dark"] {
-      --bg: #211a20;
-      --card: #30252e;
-      --pink: #ed9dbb;
-      --dark-pink: #f5b6ce;
-      --soft: #48303e;
-      --text: #fff0f5;
-      --muted: #c5aab6;
-      --border: #543c49;
+    body.dark {
+      --primary: #ed91b2;
+      --primary-dark: #f5a9c4;
+      --pink-light: #382630;
+      --pink-soft: #49313e;
+      --background: #211a20;
+      --surface: #2d232b;
+      --text: #f8eaf0;
+      --muted: #c5aab7;
+      --border: #493541;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
     body {
-      background: var(--bg);
+      font-family: "DM Sans", sans-serif;
+      background: var(--background);
       color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      transition: .3s;
-      overflow-x: hidden;
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
     }
 
     .container {
-      width: min(1050px, 90%);
+      width: min(1100px, 90%);
       margin: auto;
     }
 
-    /* NAVBAR */
+    section {
+      padding: 90px 0;
+      scroll-margin-top: 85px;
+    }
 
-    nav {
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading span {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 5vw, 42px);
+      margin-top: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* NAVIGATION */
+
+    header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: var(--bg);
+      z-index: 1000;
+      background: var(--surface);
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-content {
-      height: 70px;
+    nav {
+      min-height: 75px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 17px;
-      color: var(--dark-pink);
-      font-weight: 800;
-      letter-spacing: .5px;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--primary);
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
       align-items: center;
-      font-size: 13px;
+      gap: 27px;
+      list-style: none;
+    }
+
+    .nav-links a {
       color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: var(--pink);
+      color: var(--primary);
     }
 
-    .theme-btn,
-    .menu-btn {
-      background: var(--soft);
-      border: none;
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon-button {
+      border: 1px solid var(--border);
+      background: var(--pink-light);
+      color: var(--primary);
       border-radius: 50%;
       width: 38px;
       height: 38px;
       cursor: pointer;
-      color: var(--text);
     }
 
-    .menu-btn {
+    .menu-toggle {
       display: none;
     }
 
     /* HERO */
 
     .hero {
-      min-height: 850px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      min-height: 650px;
+      display: flex;
       align-items: center;
-      gap: 35px;
-      padding: 80px 0;
+      background:
+        radial-gradient(circle at 10% 20%, var(--pink-light), transparent 35%),
+        var(--background);
     }
 
-    .hello {
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .hero-label {
       display: inline-block;
-      background: var(--soft);
-      color: var(--dark-pink);
-      padding: 9px 17px;
+      background: var(--pink-light);
+      color: var(--primary-dark);
+      padding: 8px 17px;
       border-radius: 30px;
       font-size: 12px;
-      font-weight: bold;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(38px, 5vw, 62px);
-      line-height: 1.2;
-      margin: 23px 0;
-    }
-
-    .hero h1 .greeting {
-      display: block;
-      color: var(--dark-pink);
-      font-size: .76em;
-      font-style: italic;
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-
-    .hero h1 .name {
-      display: block;
-      color: var(--dark-pink);
-      font-size: 1.2em;
       font-weight: 700;
-    }
-
-    .hero p {
-      color: var(--muted);
-      line-height: 1.9;
-      font-size: 15px;
-      max-width: 540px;
-    }
-
-    .typing {
-      color: var(--dark-pink);
-      font-weight: bold;
-      min-height: 28px;
-      margin-top: 15px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .btn {
-      padding: 12px 21px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: bold;
-      transition: .2s;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
-    }
-
-    .primary {
-      background: var(--pink);
-      color: white;
-    }
-
-    .secondary {
-      border: 1px solid var(--pink);
-      color: var(--dark-pink);
-    }
-
-    /* PROFILE */
-
-    .profile {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 30px;
-      border-radius: 30px;
-      text-align: center;
-      box-shadow: 0 15px 40px #bd587f15;
-      transform: rotate(2deg);
-      width: 100%;
-      max-width: 620px;
-      margin: auto;
-      position: relative;
-    }
-
-    .avatar {
-      width: 220px;
-      max-width: 100%;
-      aspect-ratio: 1 / 1;
-      margin: auto;
-      border-radius: 50%;
-      background: var(--soft);
-      display: grid;
-      place-items: center;
-      border: 8px solid var(--bg);
-      overflow: hidden;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 75%;
-      border-radius: 50%;
-      display: block;
-    }
-
-    .profile h3 {
-      font-family: 'Playfair Display', serif;
-      margin-top: 22px;
-      font-size: 19px;
-    }
-
-    .profile small {
-      color: var(--muted);
-    }
-
-    .sticker {
-      font-size: 35px;
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      animation: float 3s infinite ease-in-out;
-      z-index: 2;
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 85px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-title small {
-      color: var(--dark-pink);
-      font-weight: bold;
-      letter-spacing: 3px;
-      font-size: 11px;
-    }
-
-    .section-title h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 38px;
-      margin-top: 10px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 10px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 27px;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .fact {
-      display: flex;
-      gap: 15px;
+      letter-spacing: 1px;
       margin-bottom: 20px;
     }
 
-    .fact:last-child {
-      margin-bottom: 0;
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 65px);
+      line-height: 1.15;
+      margin-bottom: 15px;
     }
 
-    .fact span {
-      font-size: 23px;
+    .hero h1 span {
+      color: var(--primary);
     }
 
-    .fact strong {
+    .hero-subtitle {
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      max-width: 540px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 23px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: 1px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--pink-light);
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .profile-frame {
+      width: min(330px, 85vw);
+      height: 390px;
+      padding: 12px;
+      border: 2px solid var(--pink-soft);
+      border-radius: 180px 180px 35px 35px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+    }
+
+    .profile-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 170px 170px 27px 27px;
+    }
+
+    .image-decoration {
+      position: absolute;
+      right: 0;
+      bottom: 15px;
+      background: var(--surface);
+      color: var(--primary);
+      padding: 13px 19px;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* ABOUT */
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--pink-light);
+      padding: 35px;
+      border-radius: 25px;
+      text-align: center;
+    }
+
+    .about-card .symbol {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .about-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .about-card p {
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .fact p {
-      font-size: 12px;
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .about-text strong {
+      color: var(--primary-dark);
     }
 
     /* SKILLS */
 
-    .skills {
+    .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
-    .skill {
-      background: var(--card);
+    .skill-card {
+      background: var(--surface);
       border: 1px solid var(--border);
-      padding: 25px;
       border-radius: 20px;
-      transition: .3s;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
     }
 
-    .skill:hover {
+    .skill-card:hover {
       transform: translateY(-6px);
-      border-color: var(--pink);
     }
 
-    .skill .icon {
+    .skill-icon {
       font-size: 30px;
+      margin-bottom: 15px;
     }
 
-    .skill h3 {
-      margin: 13px 0 8px;
-      font-size: 15px;
+    .skill-card h3 {
+      font-size: 17px;
+      margin-bottom: 12px;
     }
 
-    .skill p {
+    .skill-card p {
       color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
+      font-size: 13px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 17px;
+    }
+
+    .tag {
+      background: var(--pink-light);
+      color: var(--primary-dark);
+      padding: 5px 11px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
     }
 
     /* PROJECTS */
 
-    .filters {
+    .filter-buttons {
       display: flex;
       justify-content: center;
-      gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      gap: 10px;
+      margin-bottom: 30px;
     }
 
-    .filter {
-      padding: 9px 18px;
-      border-radius: 30px;
-      background: var(--card);
-      color: var(--muted);
+    .filter-btn {
+      padding: 9px 17px;
       border: 1px solid var(--border);
+      border-radius: 25px;
+      background: var(--surface);
+      color: var(--muted);
       cursor: pointer;
       font-size: 12px;
+      font-weight: 600;
     }
 
-    .filter.active {
-      background: var(--pink);
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
       color: white;
-      border-color: var(--pink);
+      border-color: var(--primary);
     }
 
-    .projects {
+    .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+      gap: 22px;
     }
 
-    .project {
-      background: var(--card);
+    .project-card {
+      background: var(--surface);
       border: 1px solid var(--border);
-      padding: 25px;
-      border-radius: 22px;
-      transition: .3s;
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
     }
 
-    .project:hover {
+    .project-card:hover {
       transform: translateY(-5px);
     }
 
-    .project-icon {
+    .project-card.hide {
+      display: none;
+    }
+
+    .project-number {
+      color: var(--primary);
+      font-family: "Playfair Display", serif;
       font-size: 30px;
-      background: var(--soft);
-      width: 55px;
-      height: 55px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
+      margin-bottom: 12px;
     }
 
-    .project h3 {
-      margin: 17px 0 9px;
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
     }
 
-    .project p {
+    .project-card p {
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .tags {
-      display: flex;
-      gap: 7px;
-      flex-wrap: wrap;
-      margin-top: 17px;
-    }
-
-    .tags span {
-      background: var(--soft);
-      color: var(--dark-pink);
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 10px;
-    }
-
-    .project.hidden {
-      display: none;
+      margin-bottom: 18px;
     }
 
     /* EXPERIENCE */
 
     .timeline {
-      display: grid;
-      gap: 17px;
+      max-width: 760px;
+      margin: auto;
+      border-left: 2px solid var(--pink-soft);
+      padding-left: 30px;
     }
 
     .timeline-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 25px;
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 20px;
+      position: relative;
+      padding: 0 0 35px;
     }
 
-    .timeline-item small {
-      color: var(--dark-pink);
-      font-weight: bold;
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -38px;
+      top: 7px;
+      width: 14px;
+      height: 14px;
+      background: var(--primary);
+      border: 4px solid var(--pink-light);
+      border-radius: 50%;
     }
 
     .timeline-item h3 {
-      font-size: 16px;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item .company {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .timeline-item p {
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.8;
+      margin-top: 10px;
+    }
+
+    /* EDUCATION */
+
+    .education-card {
+      max-width: 700px;
+      margin: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .education-card .symbol {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .education-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+    }
+
+    .education-card p {
+      color: var(--muted);
       margin-top: 8px;
+      font-size: 14px;
     }
 
     /* CONTACT */
 
-    .contact {
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
       text-align: center;
-      background: var(--soft);
-      padding: 55px 25px;
-      border-radius: 30px;
+      padding: 45px 30px;
+      background: var(--pink-light);
+      border-radius: 25px;
     }
 
-    .contact h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 38px;
+    .contact-box h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      margin-bottom: 12px;
     }
 
-    .contact p {
+    .contact-box p {
       color: var(--muted);
-      margin: 15px auto 25px;
-      max-width: 420px;
-      font-size: 14px;
-      line-height: 1.9;
+      margin-bottom: 25px;
     }
 
-    /* ENVELOPE */
-
-    .envelope {
-      margin: 30px auto 0;
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 20px;
-      border-radius: 20px;
-      max-width: 420px;
-      cursor: pointer;
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .message {
-      display: none;
-      color: var(--dark-pink);
-      font-family: 'Playfair Display', serif;
-      margin-top: 12px;
-      line-height: 1.7;
+    .social-links a {
+      background: var(--surface);
+      color: var(--primary-dark);
+      padding: 10px 17px;
+      border-radius: 25px;
+      font-size: 12px;
+      font-weight: 700;
+      transition: 0.3s;
     }
 
-    .message.show {
-      display: block;
+    .social-links a:hover {
+      background: var(--primary);
+      color: white;
     }
 
     /* FOOTER */
 
     footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
       text-align: center;
-      padding: 35px;
       color: var(--muted);
       font-size: 12px;
-      line-height: 1.8;
     }
 
-    /* DECORATIONS */
-
-    .floating {
-      position: fixed;
-      pointer-events: none;
-      z-index: -1;
-      opacity: .5;
-      animation: float 5s infinite ease-in-out;
-    }
-
-    .f1 {
-      top: 20%;
-      left: 3%;
-    }
-
-    .f2 {
-      top: 70%;
-      right: 4%;
-      animation-delay: 1s;
-    }
-
-    .f3 {
-      top: 45%;
-      right: 2%;
-      animation-delay: 2s;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-13px);
-      }
+    footer span {
+      color: var(--primary);
     }
 
     /* RESPONSIVE */
 
-    @media (max-width: 1100px) {
-      .hero {
-        grid-template-columns: 1fr 1fr;
-        gap: 25px;
-      }
-
-      .profile {
-        max-width: 100%;
-      }
-
-      .avatar {
-        width: 220px;
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 750px) {
-      .hero {
+    @media (max-width: 850px) {
+      .hero-content,
+      .about-content {
         grid-template-columns: 1fr;
+      }
+
+      .hero-content {
         text-align: center;
-        padding: 60px 0;
         gap: 45px;
+        padding: 70px 0;
       }
 
-      .hero p {
-        margin: auto;
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .buttons {
+      .hero-buttons {
         justify-content: center;
       }
 
-      .profile {
-        max-width: 100%;
-        padding: 25px;
+      .hero-image {
+        order: -1;
       }
 
-      .avatar {
-        width: 220px;
-        max-width: 100%;
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .about-grid,
-      .skills,
-      .projects {
-        grid-template-columns: 1fr;
+      .about-card {
+        max-width: 450px;
+        margin: auto;
       }
+    }
 
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
+    @media (max-width: 700px) {
+      .menu-toggle {
+        display: inline-flex;
       }
 
       .nav-links {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 75px;
         left: 0;
         width: 100%;
-        background: var(--card);
         padding: 25px;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
         flex-direction: column;
+        gap: 18px;
       }
 
-      .nav-links.open {
+      .nav-links.show {
         display: flex;
       }
 
-      .menu-btn {
-        display: inline-block;
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
       }
 
-      .section-title h2 {
-        font-size: 31px;
+      section {
+        padding: 70px 0;
       }
 
-      .contact h2 {
-        font-size: 31px;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .profile {
-        padding: 18px;
+      .hero {
+        min-height: auto;
       }
     }
   </style>
@@ -669,147 +659,106 @@
 
 <body>
 
-  <div class="floating f1">🌸</div>
-  <div class="floating f2">✨</div>
-  <div class="floating f3">🎀</div>
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">Nasywa.</a>
 
-  <nav>
-    <div class="container nav-content">
-      <a class="logo" href="#home">@nasywanaatania</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-      <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+      <div class="nav-actions">
+        <button class="icon-button" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+        <button class="icon-button menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
       </div>
-
-      <div>
-        <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
-        <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">☰</button>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <main>
 
-    <!-- HOME -->
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
 
-    <div class="container hero" id="home">
+        <div>
+          <span class="hero-label">WELCOME TO MY PORTFOLIO</span>
 
-      <div>
-        <span class="hello">♡ Welcome to my little space ♡</span>
+          <h1>
+            Halo, aku <span>Nasywa!</span>
+          </h1>
 
-        <h1>
-          <span class="greeting">Selembut salju,<br>seharum bunga.</span>
-          <span class="name">Halo, aku Nasywa!</span>
-        </h1>
+          <p class="hero-subtitle">
+            I'm interested in <span id="typingText">Business Operations</span>
+          </p>
 
-        <p>
-          A Sociology Graduate who loves learning, exploring ideas,
-          and turning information into meaningful insights.
-        </p>
+          <p class="hero-description">
+            A Sociology graduate with an interest in business operations,
+            digital marketing, data analysis, and social development.
+            Passionate about learning, collaboration, and creating meaningful impact.
+          </p>
 
-        <div class="typing">
-          I'm interested in <span id="typingText"></span>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          </div>
         </div>
 
-        <div class="buttons">
-          <a href="#projects" class="btn primary">Explore My Work ✨</a>
-          <a href="#contact" class="btn secondary">Say Hello 💌</a>
+        <div class="hero-image">
+          <div class="profile-frame">
+            <img src="nasy.jpeg" alt="Nasywa Natania Paramitha">
+          </div>
+          <div class="image-decoration">✿ Sociology Graduate</div>
         </div>
+
       </div>
-
-      <div class="profile">
-        <div class="sticker">🎀</div>
-
-        <div class="avatar">
-          <img src="nasy.jpeg" alt="Nasywa Natania Paramitha">
-        </div>
-
-        <h3>Nasywa Natania Paramitha</h3>
-        <small>S.Sos. · Universitas Jember</small>
-
-        <div class="tags" style="justify-content:center">
-          <span>Creative thinker</span>
-          <span>Detail-oriented</span>
-          <span>Curious learner</span>
-        </div>
-      </div>
-
-    </div>
+    </section>
 
     <!-- ABOUT -->
-
     <section id="about">
       <div class="container">
 
-        <div class="section-title">
-          <small>01 — GET TO KNOW ME</small>
-          <h2>About Me 🌷</h2>
-          <p>A little introduction about who I am.</p>
+        <div class="section-heading">
+          <span>GET TO KNOW ME</span>
+          <h2>About Me</h2>
+          <p>A little introduction about myself and my interests.</p>
         </div>
 
-        <div class="about-grid">
+        <div class="about-content">
 
-          <div class="card">
+          <div class="about-card">
+            <div class="symbol">🌷</div>
+            <h3>Nasywa Natania Paramitha</h3>
             <p>
-              Hello! I'm Nasywa Natania Paramitha, a Sociology graduate
-              from Universitas Jember with a strong interest in Business
-              Operations, Digital Marketing, and Data Analysis.
-
-              <br><br>
-
-              I enjoy exploring new ideas, organizing information,
-              understanding people's needs, and turning insights into
-              meaningful outcomes. I'm passionate about continuous
-              learning, collaboration, and creating positive impact
-              through thoughtful and purposeful work.
-
-              <br><br>
-
-              I enjoy connecting with marketers, creators, and
-              professionals who share my passion for strategic marketing,
-              collaboration, and building meaningful relationships.
+              Sociology Graduate | Business Operations |
+              Digital Marketing | Data Analysis
             </p>
           </div>
 
-          <div class="card">
+          <div class="about-text">
+            <p>
+              Hello! I'm <strong>Nasywa Natania Paramitha</strong>,
+              a Sociology graduate from Universitas Jember with a strong
+              interest in Business Operations, Digital Marketing, and Data Analysis.
+            </p>
 
-            <div class="fact">
-              <span>🎓</span>
-              <div>
-                <strong>Education</strong>
-                <p>Bachelor of Sociology — UNEJ</p>
-              </div>
-            </div>
+            <p>
+              My academic background has shaped my understanding of social
+              dynamics, communication, and human behavior. I also have
+              experience supporting business operations, managing digital
+              merchant platforms, and organizing sales data.
+            </p>
 
-            <div class="fact">
-              <span>📍</span>
-              <div>
-                <strong>Location</strong>
-                <p>Tangerang, Banten, Indonesia</p>
-              </div>
-            </div>
-
-            <div class="fact">
-              <span>💗</span>
-              <div>
-                <strong>Interest</strong>
-                <p>Business, Technology & Social Development</p>
-              </div>
-            </div>
-
-            <div class="fact">
-              <span>🌱</span>
-              <div>
-                <strong>Currently Learning</strong>
-                <p>Python, Data Analytics, Digital Strategy, Finance & Investment</p>
-              </div>
-            </div>
-
+            <p>
+              I enjoy connecting with marketers, creators, and professionals
+              who share my passion for strategic marketing, community engagement,
+              and building meaningful relationships.
+            </p>
           </div>
 
         </div>
@@ -817,52 +766,82 @@
     </section>
 
     <!-- SKILLS -->
-
     <section id="skills">
       <div class="container">
 
-        <div class="section-title">
-          <small>02 — MY CAPABILITIES</small>
-          <h2>Things I Can Do 💻</h2>
-          <p>Skills that I have and continue to develop.</p>
+        <div class="section-heading">
+          <span>WHAT I CAN DO</span>
+          <h2>Skills & Expertise</h2>
+          <p>Areas of interest and professional capabilities.</p>
         </div>
 
-        <div class="skills">
+        <div class="skills-grid">
 
-          <div class="skill">
-            <div class="icon">📊</div>
+          <div class="skill-card">
+            <div class="skill-icon">📊</div>
             <h3>Data Analysis</h3>
-            <p>Microsoft Excel, Pivot Table, SUMIFS, data administration and reporting.</p>
+            <p>Organizing, processing, and interpreting data to support business decisions.</p>
+            <div class="skill-tags">
+              <span class="tag">Microsoft Excel</span>
+              <span class="tag">Pivot Table</span>
+              <span class="tag">SUMIFS</span>
+              <span class="tag">Reporting</span>
+            </div>
           </div>
 
-          <div class="skill">
-            <div class="icon">🛍️</div>
+          <div class="skill-card">
+            <div class="skill-icon">💼</div>
             <h3>Business Operations</h3>
-            <p>Marketplace management, order monitoring, product availability and operations.</p>
+            <p>Supporting business activities, monitoring performance, and managing operational data.</p>
+            <div class="skill-tags">
+              <span class="tag">Administration</span>
+              <span class="tag">Operations</span>
+              <span class="tag">Coordination</span>
+            </div>
           </div>
 
-          <div class="skill">
-            <div class="icon">📱</div>
+          <div class="skill-card">
+            <div class="skill-icon">📱</div>
             <h3>Digital Marketing</h3>
-            <p>Campaign support, promotional activities and social media content analysis.</p>
+            <p>Managing digital platforms, promotional campaigns, and online business activities.</p>
+            <div class="skill-tags">
+              <span class="tag">Social Media</span>
+              <span class="tag">Campaigns</span>
+              <span class="tag">E-Commerce</span>
+            </div>
           </div>
 
-          <div class="skill">
-            <div class="icon">📝</div>
-            <h3>Research</h3>
-            <p>Qualitative research, interviews, observation and analytical writing.</p>
-          </div>
-
-          <div class="skill">
-            <div class="icon">💬</div>
+          <div class="skill-card">
+            <div class="skill-icon">📝</div>
             <h3>Communication</h3>
-            <p>Interpersonal communication, collaboration and customer interaction.</p>
+            <p>Building professional relationships and communicating information effectively.</p>
+            <div class="skill-tags">
+              <span class="tag">Public Relations</span>
+              <span class="tag">Writing</span>
+              <span class="tag">Teamwork</span>
+            </div>
           </div>
 
-          <div class="skill">
-            <div class="icon">🎨</div>
-            <h3>Creative Thinking</h3>
-            <p>Problem solving, idea development and continuous learning.</p>
+          <div class="skill-card">
+            <div class="skill-icon">🔍</div>
+            <h3>Research</h3>
+            <p>Understanding social phenomena through research, observation, and analysis.</p>
+            <div class="skill-tags">
+              <span class="tag">Qualitative Research</span>
+              <span class="tag">Data Collection</span>
+              <span class="tag">Analysis</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🤝</div>
+            <h3>Social Development</h3>
+            <p>Interested in community engagement, social initiatives, and meaningful collaboration.</p>
+            <div class="skill-tags">
+              <span class="tag">Community</span>
+              <span class="tag">Social Programs</span>
+              <span class="tag">Collaboration</span>
+            </div>
           </div>
 
         </div>
@@ -870,346 +849,297 @@
     </section>
 
     <!-- PROJECTS -->
-
     <section id="projects">
       <div class="container">
 
-        <div class="section-title">
-          <small>03 — MY CREATIONS</small>
-          <h2>My Little Projects 🎀</h2>
-          <p>A collection of projects, research and experiments.</p>
+        <div class="section-heading">
+          <span>MY WORK</span>
+          <h2>Selected Projects</h2>
+          <p>A collection of projects and areas I have explored.</p>
         </div>
 
-        <div class="filters">
-          <button class="filter active" data-filter="all">All</button>
-          <button class="filter" data-filter="data">Data Analysis</button>
-          <button class="filter" data-filter="business">Business</button>
-          <button class="filter" data-filter="research">Research</button>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="data">Data Analysis</button>
+          <button class="filter-btn" data-filter="business">Business</button>
+          <button class="filter-btn" data-filter="research">Research</button>
         </div>
 
-        <div class="projects">
+        <div class="projects-grid">
 
-          <div class="project" data-category="data business">
-            <div class="project-icon">📈</div>
-            <h3>UMKM Sales Dashboard</h3>
-            <p>
-              A business analytics project to monitor sales performance,
-              orders, product availability and promotional activities.
-            </p>
-            <div class="tags">
-              <span>Excel</span>
-              <span>Dashboard</span>
-              <span>Business</span>
-            </div>
-          </div>
-
-          <div class="project" data-category="data">
-            <div class="project-icon">📱</div>
-            <h3>Instagram Analytics</h3>
-            <p>
-              Exploring publicly available Instagram content and
-              engagement indicators through data analysis.
-            </p>
-            <div class="tags">
-              <span>Python</span>
-              <span>Pandas</span>
-              <span>Visualization</span>
-            </div>
-          </div>
-
-          <div class="project" data-category="research">
-            <div class="project-icon">🌾</div>
-            <h3>Tobacco Farming Research</h3>
-            <p>
-              Qualitative sociology research about tobacco farming
-              practices and culture in Jenggawah, Jember.
-            </p>
-            <div class="tags">
-              <span>Sociology</span>
-              <span>Research</span>
-              <span>Bourdieu</span>
-            </div>
-          </div>
-
-          <div class="project" data-category="data research">
-            <div class="project-icon">💭</div>
+          <article class="project-card" data-category="data">
+            <div class="project-number">01</div>
             <h3>Sentiment Analysis</h3>
             <p>
-              Exploring public opinion through text data and
-              sentiment classification.
+              An exploration of public sentiment through text data,
+              focusing on data processing, classification, and interpretation.
             </p>
-            <div class="tags">
-              <span>Python</span>
-              <span>NLP</span>
-              <span>Text Analysis</span>
+            <div class="skill-tags">
+              <span class="tag">Data Analysis</span>
+              <span class="tag">Research</span>
+              <span class="tag">Sentiment Analysis</span>
             </div>
-          </div>
+          </article>
+
+          <article class="project-card" data-category="business">
+            <div class="project-number">02</div>
+            <h3>Food & Beverage Business Operations</h3>
+            <p>
+              Supporting online food business operations through merchant
+              platform management, promotional activities, and sales reporting.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Business Operations</span>
+              <span class="tag">E-Commerce</span>
+              <span class="tag">Excel</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="research">
+            <div class="project-number">03</div>
+            <h3>Sociological Research</h3>
+            <p>
+              Qualitative research exploring tobacco farming practices
+              and the social and cultural dynamics of farming communities.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Sociology</span>
+              <span class="tag">Qualitative Research</span>
+              <span class="tag">Social Analysis</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="business">
+            <div class="project-number">04</div>
+            <h3>Digital Merchant Management</h3>
+            <p>
+              Managing online merchant platforms, monitoring product
+              availability, and supporting promotional campaign performance.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">Digital Marketing</span>
+              <span class="tag">Campaign Management</span>
+              <span class="tag">Reporting</span>
+            </div>
+          </article>
 
         </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-
     <section id="experience">
       <div class="container">
 
-        <div class="section-title">
-          <small>04 — MY JOURNEY</small>
-          <h2>Experience & Journey 🌼</h2>
-          <p>
-            A glimpse into my professional experience,
-            organizational involvement, and community activities.
-          </p>
+        <div class="section-heading">
+          <span>MY JOURNEY</span>
+          <h2>Experience</h2>
+          <p>Some of my professional and organizational experiences.</p>
         </div>
 
         <div class="timeline">
 
           <div class="timeline-item">
-            <small>Professional Experience</small>
-            <div>
-              <h3>Administration & Online Business Operations</h3>
-              <p>
-                Managed online food business merchant platforms,
-                including GoFood, GrabFood, and ShopeeFood.
-                Monitored incoming orders, maintained product
-                availability, coordinated promotional activities
-                and marketing campaigns, and supported the
-                implementation of marketing strategies to improve
-                business performance. Also handled sales data
-                administration and periodic performance reports.
-              </p>
-            </div>
+            <h3>Administration & Business Operations</h3>
+            <div class="company">RM Sari Rasa</div>
+            <p>
+              Supported daily business operations, managed GoFood,
+              GrabFood, and ShopeeFood merchant platforms, monitored
+              product availability, and prepared sales performance reports.
+            </p>
           </div>
 
           <div class="timeline-item">
-            <small>Professional Experience</small>
-            <div>
-              <h3>Management Staff — Public Relations Department</h3>
-              <p>
-                Contributed to the Public Relations Department
-                at Yayasan Psikologi Muslimah Indonesia, supporting
-                organizational communication, public relations
-                initiatives, and the coordination of activities
-                to strengthen audience engagement and public awareness.
-              </p>
-            </div>
+            <h3>Public Relations</h3>
+            <div class="company">Yayasan Psikologi Muslimah Indonesia</div>
+            <p>
+              Contributed to public relations activities, communication,
+              and organizational information management.
+            </p>
           </div>
 
           <div class="timeline-item">
-            <small>Community Involvement</small>
-            <div>
-              <h3>Organizational & Volunteer Activities</h3>
-              <p>
-                Actively participated in organizational activities
-                and volunteer initiatives, contributing to collaborative
-                programs, community engagement, and social activities.
-                These experiences have strengthened my communication,
-                teamwork, adaptability, and interpersonal skills.
-              </p>
-            </div>
+            <h3>Academic & Research Activities</h3>
+            <div class="company">Universitas Jember</div>
+            <p>
+              Developed research, communication, analytical, and
+              academic writing skills through Sociology studies and projects.
+            </p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
 
+        <div class="section-heading">
+          <span>ACADEMIC BACKGROUND</span>
+          <h2>Education</h2>
+        </div>
+
+        <div class="education-card">
+          <div class="symbol">🎓</div>
+          <h3>Universitas Jember</h3>
+          <p>Bachelor of Sociology (S.Sos.)</p>
+          <p>Faculty of Social and Political Sciences</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
 
-        <div class="contact">
+        <div class="section-heading">
+          <span>LET'S CONNECT</span>
+          <h2>Get In Touch</h2>
+          <p>I'm always open to meaningful conversations and opportunities.</p>
+        </div>
 
-          <h2>Let's Connect! 💌</h2>
+        <div class="contact-box">
+          <h3>Let's create something meaningful!</h3>
 
           <p>
-            Thank you for visiting my little space.
-            I'm always excited to connect, collaborate, and learn
-            something new. Feel free to reach out through LinkedIn
-            or email. I'd love to hear from you!
+            Feel free to connect with me for professional opportunities,
+            collaboration, or simply to exchange ideas.
           </p>
 
-          <div class="buttons" style="justify-content:center">
+          <div class="social-links">
+            <a href="mailto:contact.nasywa@gmail.com">Email</a>
 
-            <a class="btn primary"
-               href="https://id.linkedin.com/in/nasywanaatania"
-               target="_blank"
-               rel="noopener noreferrer">
-              LinkedIn ↗
+            <a href="https://www.linkedin.com/in/nasywanaatania"
+               target="_blank" rel="noopener noreferrer">
+              LinkedIn
             </a>
 
-            <a class="btn secondary"
-               href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.nasywa@gmail.com"
-               target="_blank"
-               rel="noopener noreferrer">
-              Email Me 💌
+            <a href="https://github.com/nasywanatania"
+               target="_blank" rel="noopener noreferrer">
+              GitHub
             </a>
-
           </div>
-
-          <div class="envelope" id="envelope">
-            💌 Click to open my little message
-
-            <div class="message" id="message">
-              Thank you for stopping by! ♡
-              <br>
-              Keep growing, keep learning, and stay curious.
-            </div>
-          </div>
-
         </div>
+
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-
   <footer>
-    Made with love 💗 by Nasywa Natania Paramitha
-    <br><br>
-    © <span id="year"></span> All rights reserved.
+    <div class="container">
+      <p>
+        Designed & Built with <span>♥</span> by Nasywa Natania Paramitha
+        · <span id="currentYear"></span>
+      </p>
+    </div>
   </footer>
 
   <script>
-
-    // TYPING ANIMATION
-
-    const words = [
-      "Data Analysis ✨",
-      "Business Operations 💻",
-      "Digital Marketing 🌷",
-      "Social Development 💗"
-    ];
-
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function typingEffect() {
-      const current = words[wordIndex];
-      const element = document.getElementById("typingText");
-
-      element.textContent = current.substring(0, charIndex);
-
-      if (!deleting && charIndex < current.length) {
-        charIndex++;
-        setTimeout(typingEffect, 90);
-
-      } else if (deleting && charIndex > 0) {
-        charIndex--;
-        setTimeout(typingEffect, 45);
-
-      } else {
-        deleting = !deleting;
-
-        if (!deleting) {
-          wordIndex = (wordIndex + 1) % words.length;
-        }
-
-        setTimeout(typingEffect, 700);
-      }
-    }
-
-    typingEffect();
-
-
     // DARK MODE
+    const themeToggle = document.getElementById("themeToggle");
 
-    const themeBtn = document.getElementById("themeBtn");
-
-    const savedTheme = localStorage.getItem("portfolioTheme");
-
-    if (savedTheme === "dark") {
-      document.body.setAttribute("data-theme", "dark");
-      themeBtn.textContent = "☀️";
+    if (localStorage.getItem("portfolioTheme") === "dark") {
+      document.body.classList.add("dark");
+      themeToggle.textContent = "☀";
     }
 
-    themeBtn.addEventListener("click", () => {
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
 
-      const dark =
-        document.body.getAttribute("data-theme") !== "dark";
+      const isDark = document.body.classList.contains("dark");
 
-      document.body.setAttribute(
-        "data-theme",
-        dark ? "dark" : "light"
-      );
-
-      themeBtn.textContent = dark ? "☀️" : "🌙";
-
-      localStorage.setItem(
-        "portfolioTheme",
-        dark ? "dark" : "light"
-      );
-
+      themeToggle.textContent = isDark ? "☀" : "☾";
+      localStorage.setItem("portfolioTheme", isDark ? "dark" : "light");
     });
-
-
-    // PROJECT FILTER
-
-    const filters = document.querySelectorAll(".filter");
-    const projects = document.querySelectorAll(".project");
-
-    filters.forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        filters.forEach(item => {
-          item.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        const selected = button.dataset.filter;
-
-        projects.forEach(project => {
-
-          const categories =
-            project.dataset.category.split(" ");
-
-          const visible =
-            selected === "all" ||
-            categories.includes(selected);
-
-          project.classList.toggle("hidden", !visible);
-
-        });
-
-      });
-
-    });
-
-
-    // ENVELOPE MESSAGE
-
-    document.getElementById("envelope").addEventListener("click", () => {
-      document.getElementById("message").classList.toggle("show");
-    });
-
 
     // MOBILE MENU
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-    document.getElementById("menuBtn").addEventListener("click", () => {
-      document.getElementById("navLinks").classList.toggle("open");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuToggle.textContent = navLinks.classList.contains("show") ? "✕" : "☰";
     });
 
     document.querySelectorAll(".nav-links a").forEach(link => {
-
       link.addEventListener("click", () => {
-        document.getElementById("navLinks").classList.remove("open");
+        navLinks.classList.remove("show");
+        menuToggle.textContent = "☰";
       });
-
     });
 
+    // TYPING ANIMATION
+    const typingText = document.getElementById("typingText");
+
+    const words = [
+      "Business Operations",
+      "Digital Marketing",
+      "Data Analysis",
+      "Social Development"
+    ];
+
+    let wordIndex = 0;
+    let characterIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+
+      if (deleting) {
+        characterIndex--;
+      } else {
+        characterIndex++;
+      }
+
+      typingText.textContent = currentWord.substring(0, characterIndex);
+
+      let speed = deleting ? 55 : 100;
+
+      if (!deleting && characterIndex === currentWord.length) {
+        deleting = true;
+        speed = 1500;
+      } else if (deleting && characterIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = 400;
+      }
+
+      setTimeout(typeEffect, speed);
+    }
+
+    typeEffect();
+
+    // PROJECT FILTER
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        projectCards.forEach(card => {
+          const category = card.dataset.category;
+
+          if (filter === "all" || category === filter) {
+            card.classList.remove("hide");
+          } else {
+            card.classList.add("hide");
+          }
+        });
+      });
+    });
 
     // CURRENT YEAR
-
-    document.getElementById("year").textContent =
+    document.getElementById("currentYear").textContent =
       new Date().getFullYear();
-
   </script>
 
 </body>
 </html>
-```
