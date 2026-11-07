@@ -669,6 +669,11 @@
 
 <body>
 
+  <!-- BACKGROUND MUSIC -->
+  <audio id="backgroundMusic" autoplay loop preload="auto">
+    <source src="./yungkaiblue.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="floating f1">🌸</div>
   <div class="floating f2">✨</div>
   <div class="floating f3">🎀</div>
@@ -1036,11 +1041,11 @@
             </a>
 
             <a class="btn secondary"
-   href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.nasywa@gmail.com"
-   target="_blank"
-   rel="noopener noreferrer">
-  Email Me 💌
-</a>
+               href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.nasywa@gmail.com"
+               target="_blank"
+               rel="noopener noreferrer">
+              Email Me 💌
+            </a>
 
           </div>
 
@@ -1201,6 +1206,19 @@
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+
+    // BACKGROUND MUSIC AUTOPLAY
+
+    const backgroundMusic = document.getElementById("backgroundMusic");
+
+    backgroundMusic.volume = 0.5;
+
+    window.addEventListener("load", () => {
+      backgroundMusic.play().catch(error => {
+        console.log("Autoplay dibatasi oleh browser:", error);
+      });
+    });
 
   </script>
 
