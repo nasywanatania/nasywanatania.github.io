@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -81,7 +81,6 @@
     }
 
     .logo {
-      font-family: 'DM Sans', sans-serif;
       font-size: 17px;
       color: var(--dark-pink);
       font-weight: 800;
@@ -501,7 +500,7 @@
     .contact p {
       color: var(--muted);
       margin: 15px auto 25px;
-      max-width: 220px;
+      max-width: 420px;
       font-size: 14px;
       line-height: 1.9;
     }
@@ -590,7 +589,8 @@
       }
 
       .avatar {
-        width: 100%;
+        width: 220px;
+        max-width: 100%;
       }
     }
 
@@ -616,8 +616,8 @@
       }
 
       .avatar {
-        width: 100%;
-        max-width: 220px;
+        width: 220px;
+        max-width: 100%;
       }
 
       .about-grid,
@@ -759,16 +759,20 @@
               Hello! I'm Nasywa Natania Paramitha, a Sociology graduate
               from Universitas Jember with a strong interest in Business
               Operations, Digital Marketing, and Data Analysis.
+
               <br><br>
+
               I enjoy exploring new ideas, organizing information,
               understanding people's needs, and turning insights into
               meaningful outcomes. I'm passionate about continuous
               learning, collaboration, and creating positive impact
               through thoughtful and purposeful work.
+
               <br><br>
-              Always enjoy to connect with marketers, creative, 
-              and professionals passionate about strategic marketing, 
-              collaboration, and meaningful connections
+
+              I enjoy connecting with marketers, creators, and
+              professionals who share my passion for strategic marketing,
+              collaboration, and building meaningful relationships.
             </p>
           </div>
 
@@ -1036,11 +1040,11 @@
             </a>
 
             <a class="btn secondary"
-   href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.nasywa@gmail.com"
-   target="_blank"
-   rel="noopener noreferrer">
-  Email Me 💌
-</a>
+               href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.nasywa@gmail.com"
+               target="_blank"
+               rel="noopener noreferrer">
+              Email Me 💌
+            </a>
 
           </div>
 
@@ -1115,6 +1119,13 @@
 
     const themeBtn = document.getElementById("themeBtn");
 
+    const savedTheme = localStorage.getItem("portfolioTheme");
+
+    if (savedTheme === "dark") {
+      document.body.setAttribute("data-theme", "dark");
+      themeBtn.textContent = "☀️";
+    }
+
     themeBtn.addEventListener("click", () => {
 
       const dark =
@@ -1133,11 +1144,6 @@
       );
 
     });
-
-    if (localStorage.getItem("portfolioTheme") === "dark") {
-      document.body.setAttribute("data-theme", "dark");
-      themeBtn.textContent = "☀️";
-    }
 
 
     // PROJECT FILTER
@@ -1206,3 +1212,4 @@
 
 </body>
 </html>
+```
